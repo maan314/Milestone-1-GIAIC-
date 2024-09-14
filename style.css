@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+  }
+  
+  .container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1,h2 {
+    text-align: center;
+  }
+  
+  .resume-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  .resume-form input,
+  .resume-form textarea {
+    width: 98%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .resume-form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    margin-left: 40%;
+    border: none;
+    background-color: #1ca73c;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .resume-form button:hover {
+    background-color: #f8061e;
+  }
+
+  
