@@ -3,39 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <title>Resume Builder</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>Resume Builder</h1>
-    <h1>by Muhammad Usman</h1>
-    <h2>Enter your Information</h2>
 
+    <!-- Form to collect resume data -->
     <div class="resume-form">
       <form id="resumeForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+        </fieldset>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        <fieldset>
+          <legend>Education</legend>
+          <label for="degree">Degree:</label>
+          <input type="text" id="degree" name="degree" placeholder="Enter your degree" required />
+          
+          <label for="university">University:</label>
+          <input type="text" id="university" name="university" placeholder="Enter your university" required />
+          
+          <label for="graduation">Year of Graduation:</label>
+          <input type="text" id="graduation" name="graduation" placeholder="Year of graduation" required />
+        </fieldset>
 
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+        <fieldset>
+          <legend>Work Experience</legend>
+          <label for="jobTitle">Job Title:</label>
+          <input type="text" id="jobTitle" name="jobTitle" placeholder="Enter your job title" required />
+          
+          <label for="company">Company:</label>
+          <input type="text" id="company" name="company" placeholder="Enter company name" required />
+          
+          <label for="years">Years:</label>
+          <input type="text" id="years" name="years" placeholder="Enter the years you worked" required />
+        </fieldset>
 
-        <label for="experience">Experience:</label>
-        <textarea id="experience" name="experience" placeholder="Enter your work experience" required></textarea>
+        <fieldset>
+          <legend>Skills</legend>
+          <label for="skills">Skills:</label>
+          <input type="text" id="skills" name="skills" placeholder="Enter your skills" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Username</legend>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Enter a username" required />
+        </fieldset>
 
         <button type="submit">Generate Resume</button>
       </form>
     </div>
 
+    <!-- Generated resume output -->
     <div class="resume-output" id="resumeOutput">
-      <p><strong></strong> <span id="displayName"></span></p>
-      <p><strong></strong> <span id="displayEmail"></span></p>
-      <p><strong></strong> <span id="displayPhone"></span></p>
-      <p><strong></strong></p>
-      <p id="displayExperience"></p>
+      <h2>Your Resume</h2>
+      <div id="personalInfo" class="editable" contenteditable="true"></div>
+      <div id="education" class="editable" contenteditable="true"></div>
+      <div id="workExperience" class="editable" contenteditable="true"></div>
+      <div id="skillsList" class="editable" contenteditable="true"></div>
+    </div>
+
+    <!-- Sharing and Download Options -->
+    <div id="shareDownload" style="display:none;">
+      <p><strong>Share your resume:</strong></p>
+      <p id="shareLink"></p>
+      <button id="downloadBtn">Download as PDF</button>
     </div>
   </div>
 
